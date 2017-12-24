@@ -1,0 +1,23 @@
+<!-- main page image and title -->
+        <div class="row" style="border:none; background:rgb(242, 255, 255); height:210px;">
+          <div class="col-xs-6">
+            <img src="{{ url_for('static', filename='images/mainlogo.png')}}" style="height:100px; margin-left:20px; margin-top:40px;" />
+          </div>
+          <div style=" margin-top: 80px;">  
+            <h1><strong> Base de donnée aérienne</strong>.Neo4j</h1>
+          </div>
+        </div>
+
+      <!-- main page navbar -->
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand"></a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/"><b>Home</b></a></li>
+            <li><a href="/vols"><b>Afficher la liste des villes</b></a></li>
+            <li><a href="/search"><b>Rechercher</b></a></li>
+          </ul>
+        </div>
+      </nav>

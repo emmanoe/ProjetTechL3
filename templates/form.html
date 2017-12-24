@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% block content %}
+<form method="post" action="">
+    <label>Avoir les informations sur le vol : </label>
+
+    <select id="depart" name="depart">
+      <option>ville de départ</option>	
+	  <option value="BORDEAUX">Bordeaux</option>
+	  <option value="PARIS **">Paris</option>
+	  <option value="CHICAGO **">Chicago</option>
+	</select>
+
+	<select id="destination" name="destination">
+      <option>ville de destination</option>		
+	  <option value="BORDEAUX">Bordeaux</option>
+	  <option value="PARIS **">Paris</option>
+	  <option value="CHICAGO **">Chicago</option>
+	</select>
+
+	<input type="submit" value="chercher" style="font-size:11px;" /">
+</form>
+
+
+
+{% endblock %}

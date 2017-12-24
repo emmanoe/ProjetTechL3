@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mini Projet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" 
+  href="{{ url_for('static',filename='css/bootstrap.min.css')}}">
+</head>
+<body>
+  <header>
+    <div class="navbar-header">
+          <a class="navbar-brand" href="/">
+            <img src="{{ url_for('static', filename='images/mainlogo.png')}}" class="center-block" alt="">
+          </a>
+    </div>
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="active"><a href="/">Home</a></li>
+      <li role="presentation"><a href="/print_json">Base de donnée</a></li>
+      <li role="presentation"><a href="/">Messages</a></li>
+    </ul>
+
+</header>
+
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mini Projet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" 
+  href="{{ url_for('static',filename='css/bootstrap.min.css')}}">
+</head>
+<body>
+  <header>
+    <div class="container-fluid">
+   <div class="row">
+  <img src="https://www.sebastienbouyssou.com/wp-content/uploads/2009/02/airfrance_1975.jpg" class="img-responsive">
+   </div>
+</div>
+a
+</header>
+
+
+</body>
+</html>
+
+<div class="container-fluid" style="border:none; background:white; height:210px;"style="border:none; background:white; height:210px;">
+   <div class="row">
+  <img style="height:200px; margin-left:-15px;" src="{{ url_for('static', filename='images/mainlogo.png')}}" >
+   </div>
+   <div class="container-fluid">
+    <h3>Hello World</h3>
+    </div>
+</div>

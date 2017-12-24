@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Lignes aeriennes </title>
+  <link href="{{ url_for('static', filename='bootstrap.min.css')}}" rel="stylesheet"/>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/plane.ico')}}">
+</head>
+
+    <body>
+        
+      {% include 'header.html' %}
+
+
+      <!-- main page text canvevas -->
+      <canvas id="myCanvas" width="450" height="200" 
+        style="border:1px solid #000000;">
+
+        <script>
+          var c = document.getElementById("myCanvas");
+          var ctx = c.getContext("2d");
+          ctx.font = "bold 15px Arial";
+          ctx.fillText("CHERCHER/TROUVER",10,40);
+          ctx.font = "15px Arial";
+          ctx.fillText("Ce site met en place un serveur Flask permettant aux utilisateurs ",10,70);
+          ctx.fillText("de questioner les données décrivant les lignes aériennes (quels ",10,100);
+          ctx.fillText("vols selon leur fréquentation, la distance parcourue, et pleins ",10,130);
+          ctx.fillText("d'autres fonctionnalités à découvrir dans le menu déroulant à venir).",10,160);
+        </script>
+      </canvas>
+
+    </body>
+</html>
