@@ -23,9 +23,9 @@ def index():
         graph = Graph(password="3789")
         sec = graph.data("match (v:ville)-[r]-(varr:ville) where v.nom = {X} and varr.nom = {Y}  return r.nb_passagers, r.distance_KM",X= dep,Y= arr)
         simple = graph.data("match (vdep:ville)-[resc]-(escal:ville)-[r]-(varr:ville) where vdep.nom = {X} and varr.nom = {Y}  return escal.nom",X= dep,Y= arr)
-        return render_template('search.html',titre="les vols", ville = sec, resultat = simple)
+        return render_template('search.html',titre="les vols")#, ville = sec, resultat = simple)
     else:
-        return render_template('search.html',titre="formulaire1")
+        return render_template('form.html',titre="formulaire1")
 
 
 @app.route('/vols')
