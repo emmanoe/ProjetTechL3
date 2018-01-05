@@ -9,21 +9,44 @@
 {% include 'header.html' %}
 
 <form method="post" action="">
-    <label>Avoir les informations sur le vol : </label>
+	<label>Avoir les informations sur le vol : </label>
 
     <select id="depart" name="depart">
-      <option>ville de départ</option>	
-	  <option value="BORDEAUX">Bordeaux</option>
+      <option>ville de départ</option>
+    </select>	
+	  <!--<option value="BORDEAUX">Bordeaux</option>
 	  <option value="PARIS **">Paris</option>
 	  <option value="CHICAGO **">Chicago</option>
-	</select>
+	</select> -->
 
 	<select id="destination" name="destination">
       <option>ville de destination</option>		
-	  <option value="BORDEAUX">Bordeaux</option>
+	</select>  
+	  <!--<option value="BORDEAUX">Bordeaux</option>
 	  <option value="PARIS **">Paris</option>
 	  <option value="CHICAGO **">Chicago</option>
-	</select>
+	</select> -->
+<script type="text/javascript">
+
+	//var langArray = [
+    //{value: "val1", text: "text 1"},
+    //{value: "val2", text: "text 2"}
+	//];
+
+	var select = document.getElementById('depart'),
+	    option,
+	    i = 0,
+	    il = langArray.length;
+
+
+	for (; i < il; i += 1) {
+	    option = document.createElement('option');
+	    option.setAttribute('value', langArray[i]);
+	    //option.appendChild(document.createTextNode(langArray[i].text));
+	    select.appendChild(option);
+	}
+
+</script>
 
 	<input type="submit" value="chercher" style="font-size:11px;" /">
 </form>

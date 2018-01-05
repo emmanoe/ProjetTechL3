@@ -2,6 +2,7 @@ import time
 from flask import *
 import json
 import sys
+import csv
 
 #NE PAS MODIFIER LA LIGNE SUIVANTE
 app = Flask(__name__)
@@ -25,7 +26,16 @@ def index():
         simple = graph.data("match (vdep:ville)-[resc]-(escal:ville)-[r]-(varr:ville) where vdep.nom = {X} and varr.nom = {Y}  return escal.nom",X= dep,Y= arr)
         return render_template('search.html',titre="les vols")#, ville = sec, resultat = simple)
     else:
-        return render_template('form.html',titre="formulaire1")
+        langArray = [];
+        with open('./static/ITA_2000.csv','r') as vol:
+            reader = csv.reader(vol)
+            nodes = [ n for n in vol][2:]
+
+            node_names = csv.reader(nodes, delimiter = ';')
+            for name in node_names:
+                langArray.append(name[2])
+            print(len(langArray))
+        return render_template('form.html',titre="formulaire1", langArray=langArray)
 
 
 @app.route('/vols')
