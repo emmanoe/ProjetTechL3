@@ -1,10 +1,12 @@
 <!-- main page image and title -->
 <div class="container-fluid">
   <div class="row" style="background:rgb(242, 255, 255);">
-    <div class="col-lg-3">
-      <img src="{{ url_for('static', filename='images/mainlogo.png')}}" style="width: 100%" />
+    <div class="col-lg-3 col-md-3 col-xs-3">
+      <a href="/">
+        <img  src="{{ url_for('static', filename='images/mainlogo.png')}}" style="width: 100%" />
+      </a>
     </div>
-    <div class=" col-lg-6 " style="text-align: center; vertical-align: middle;"> 
+    <div class=" col-lg-6 col-md-6 col-xs-6" style="text-align: center; vertical-align: middle;"> 
       <h1><strong> Base de donnée aérienne</strong>.Neo4j</h1>
     </div>
   </div>

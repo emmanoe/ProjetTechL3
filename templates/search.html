@@ -23,8 +23,17 @@
 
 {% include 'header.html' %}
 
+
 <div class="row">
-  <div class="col-lg-offset-3 col-lg-8">
+
+  <div class="col-lg-2 col-md-2 col-xs-2">
+    <b>CE TRAJET PROPOSE PLUSIEURS VOLS PASSANT PAR :</b> 
+  {% for ville in resultat %}
+    <br />{{ ville['escal.nom'] }}
+  {% endfor %}
+
+  </div>
+  <div class="col-lg-8 col-md-8 col-xs-8">
     <svg width="960" height="600" viewBox="0 0 960 600" preserveAspectRatio="xMidYMid meet"></svg>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script>

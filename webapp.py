@@ -24,8 +24,9 @@ def index():
         graph = Graph(password="3789")
         sec = graph.data("match (v:ville)-[r]-(varr:ville) where v.nom = {X} and varr.nom = {Y}  return r.nb_passagers, r.distance_KM",X= dep,Y= arr)
         simple = graph.data("match (vdep:ville)-[resc]-(escal:ville)-[r]-(varr:ville) where vdep.nom = {X} and varr.nom = {Y}  return escal.nom",X= dep,Y= arr)
-        return render_template('search.html',titre="les vols")#, ville = sec, resultat = simple)
+        return render_template('search.html',titre="les vols", ville = sec, resultat = simple)
     else:
+        #A mettre dans un py 
         langArray = [];
         with open('./static/ITA_2000.csv','r') as vol:
             reader = csv.reader(vol)
@@ -34,8 +35,11 @@ def index():
             node_names = csv.reader(nodes, delimiter = ';')
             for name in node_names:
                 langArray.append(name[2])
+            langArray = sorted(set(langArray))
             print(len(langArray))
-        return render_template('form.html',titre="formulaire1", langArray=langArray)
+        ####################
+        # langArray = getArray()
+        return render_template('form.html', langArray=langArray)
 
 
 @app.route('/vols')
