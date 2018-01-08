@@ -15,7 +15,7 @@
     <select id="depart" name="depart">
       <option>ville de départ</option>
       <ul>
-	    {% for pays in langArray %}
+	    {% for pays in langDepArray %}
 	        <option>{{ pays }}</option>
 	    {% endfor %}
 	</ul>
@@ -28,7 +28,7 @@
 	<select id="destination" name="destination">
       <option>ville de destination</option>
       <ul>
-	    {% for pays in langArray %}
+	    {% for pays in langArrArray %}
 	        <option>{{ pays }}</option>
 	    {% endfor %}
 	</ul>		

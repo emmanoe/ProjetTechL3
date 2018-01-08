@@ -23,23 +23,25 @@ def index():
         authenticate("localhost:7474", "neo4j", "3789")
         graph = Graph(password="3789")
         sec = graph.data("match (v:ville)-[r]-(varr:ville) where v.nom = {X} and varr.nom = {Y}  return r.nb_passagers, r.distance_KM",X= dep,Y= arr)
-        simple = graph.data("match (vdep:ville)-[resc]-(escal:ville)-[r]-(varr:ville) where vdep.nom = {X} and varr.nom = {Y}  return escal.nom",X= dep,Y= arr)
-        return render_template('search.html',titre="les vols", ville = sec, resultat = simple)
+        simple = graph.data("match (vdep:ville)-[resc]-(escal:ville)-[r]-(varr:ville) where vdep.nom = {X} and varr.nom = {Y}  return escal, resc",X= dep,Y= arr)
+        return render_template('search.html',titre="les vols", info_vol = sec, escal = simple)
     else:
         #A mettre dans un py 
-        langArray = [];
+        langDepArray=[];
+        langArrArray=[]; 
         with open('./static/ITA_2000.csv','r') as vol:
             reader = csv.reader(vol)
             nodes = [ n for n in vol][2:]
 
             node_names = csv.reader(nodes, delimiter = ';')
-            for name in node_names:
-                langArray.append(name[2])
-            langArray = sorted(set(langArray))
-            print(len(langArray))
+            for vname in node_names:
+                langDepArray.append(vname[2])
+                langArrArray.append(vname[5])
+            langDepArray = sorted(set(langDepArray))
+            langArrArray = sorted(set(langArrArray))
         ####################
         # langArray = getArray()
-        return render_template('form.html', langArray=langArray)
+        return render_template('form.html',  langDepArray=langDepArray, langArrArray= langArrArray)
 
 
 @app.route('/vols')
