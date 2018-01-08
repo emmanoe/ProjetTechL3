@@ -27,12 +27,21 @@
   <div class="row">
 
     <div class="col-sm-12 mx-auto">
-      <h1>VOL : {{dep | replace("*","")}} -> {{arr | replace("*","")}} </h1>
-      <p><b>INFO :</b></p>
-      <p><b>AUTRES VOLS AU DEPART DE PARIS :</b></p> 
-      {% for ville in escal %}
-        <p>{{ ville['escal']['nom'] | replace("*","")}}</p>
-      {% endfor %}
+      <h1>TRAJET : {{dep | replace("*","")}} - {{arr | replace("*","")}} </h1>
+      <p><b>INFOS :</b></p>
+
+      {%if info_vol | length > 0 %}
+        <p> {{info_vol | length}} vol direct, distance : {{info_vol}}</p>
+      {% else %}
+        <p> Actuellement, il n'existe aucun vol direct pour cette liaison </p>
+      {%endif%}
+
+      {%if escal | length > 0 %}
+        <p><b>ESCALE:</b></p> 
+        {% for ville in escal %}
+          <p>{{ ville['escal']['nom'] | replace("*","")}}</p>
+        {% endfor %}
+      {%endif%}
     </div>
 
 
