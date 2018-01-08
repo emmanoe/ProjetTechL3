@@ -24,7 +24,7 @@ def index():
         graph = Graph(password="3789")
         sec = graph.data("match (v:ville)-[r]-(varr:ville) where v.nom = {X} and varr.nom = {Y}  return r.nb_passagers, r.distance_KM",X= dep,Y= arr)
         simple = graph.data("match (vdep:ville)-[resc]-(escal:ville)-[r]-(varr:ville) where vdep.nom = {X} and varr.nom = {Y}  return escal, resc",X= dep,Y= arr)
-        return render_template('search.html',titre="les vols", info_vol = sec, escal = simple)
+        return render_template('search.html',titre="les vols", info_vol = sec, escal = simple, dep=dep, arr=arr)
     else:
         #A mettre dans un py 
         langDepArray=[];
@@ -35,8 +35,8 @@ def index():
 
             node_names = csv.reader(nodes, delimiter = ';')
             for vname in node_names:
-                langDepArray.append(vname[2])
-                langArrArray.append(vname[5])
+                langDepArray.append(vname[2].replace('*',''))
+                langArrArray.append(vname[5].replace('*',''))
             langDepArray = sorted(set(langDepArray))
             langArrArray = sorted(set(langArrArray))
         ####################
