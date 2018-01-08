@@ -27,10 +27,11 @@
   <div class="row">
 
     <div class="col-sm-12 mx-auto">
-      <h1>Trajet : {{dep}} -> {{arr}} </h1>
-      <p><b>CE VOL PROPOSE EGALEMENT DES LIAISONS VERS :</b></p> 
+      <h1>VOL : {{dep | replace("*","")}} -> {{arr | replace("*","")}} </h1>
+      <p><b>INFO :</b></p>
+      <p><b>AUTRES VOLS AU DEPART DE PARIS :</b></p> 
       {% for ville in escal %}
-        <p>{{ ville['escal']['nom']}}</p>
+        <p>{{ ville['escal']['nom'] | replace("*","")}}</p>
       {% endfor %}
     </div>
 

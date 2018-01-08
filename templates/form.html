@@ -16,7 +16,7 @@
       <option>ville de départ</option>
       <ul>
 	    {% for pays in langDepArray %}
-	        <option>{{ pays }}</option>
+	        <option value="{{ pays }}"> {{ pays | replace("*","")}}</option>
 	    {% endfor %}
 	</ul>
     </select>	
@@ -29,7 +29,7 @@
       <option>ville de destination</option>
       <ul>
 	    {% for pays in langArrArray %}
-	        <option>{{ pays }}</option>
+	        <option value="{{ pays }}"> {{ pays | replace("*","")}}</option>
 	    {% endfor %}
 	</ul>		
 	</select>  

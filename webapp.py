@@ -35,8 +35,8 @@ def index():
 
             node_names = csv.reader(nodes, delimiter = ';')
             for vname in node_names:
-                langDepArray.append(vname[2].replace('*',''))
-                langArrArray.append(vname[5].replace('*',''))
+                langDepArray.append(vname[2])
+                langArrArray.append(vname[5])
             langDepArray = sorted(set(langDepArray))
             langArrArray = sorted(set(langArrArray))
         ####################
