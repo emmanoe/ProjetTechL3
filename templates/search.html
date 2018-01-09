@@ -11,6 +11,7 @@
 
 .links line {
   stroke: #aaa;
+  stroke-width: 2px;
 }
 
 .nodes circle {
@@ -27,14 +28,21 @@
   <div class="row">
 
     <div class="col-sm-12 mx-auto">
-      <h1>TRAJET : {{dep | replace("*","")}} - {{arr | replace("*","")}} </h1>
-      <p><b>INFOS :</b></p>
 
-      {%if info_vol | length > 0 %}
-        <p> {{info_vol | length}} vol direct, distance : {{info_vol}}</p>
-      {% else %}
-        <p> Actuellement, il n'existe aucun vol direct pour cette liaison </p>
+      {% if var is defined %}
+        <h1> {{var}} : </h1>
       {%endif%}
+
+      {% if var is not defined %}
+      <h1>TRAJET : {{dep | replace("*","")}} - {{arr | replace("*","")}} </h1>
+      {%endif%}
+
+      {%if info_vol | length > 0%} 
+      <p><b>INFOS :</b></p>
+        <p> {{info_vol | length}} vol direct, distance : {{info_vol}}</p>
+      {% elif var is not defined %}
+        <p> Actuellement, il n'existe aucun vol direct pour cette liaison </p>
+      {% endif %}
 
       {%if escal | length > 0 %}
         <p><b>ESCALE:</b></p> 
@@ -59,7 +67,7 @@
           .force("charge", d3.forceManyBody())
           .force("center", d3.forceCenter(width / 2, height / 2));
 
-      d3.json("./static/miserablesmin5.json", function(error, graph) {
+      d3.json("./static/miserablesmin7.json", function(error, graph) {
         if (error) throw error;
 
         var link = svg.append("g")
@@ -73,7 +81,7 @@
           .selectAll("circle")
           .data(graph.nodes)
           .enter().append("circle")
-            .attr("r", 2.5)
+            .attr("r", 5)
             .call(d3.drag()
                 .on("start", dragstarted)
                 .on("drag", dragged)

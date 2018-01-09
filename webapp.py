@@ -64,3 +64,21 @@ def d3js():
 def d3s():
     return render_template('population.csv')
 
+## Generate  an array with all the Countries
+with open('./templates/population.csv','r') as Countrys:
+    reader = csv.reader(Countrys)
+    nodes = [ n for n in Countrys][2:]
+
+country_names = csv.reader(nodes, delimiter = ',')
+country_name = []
+for country in country_names:
+    country_name.append(country[1])
+##########################################
+
+@app.route('/<var>')
+def tests(var):
+    if var in country_name:
+        #cpays = get_cpays(var)
+        #nb_vol = graph.data("match (vdep:ville) where vdep.codepays = {X} return count(vdep)", X = cpays)
+        return render_template('search.html')#,var=var,nb_vol=nb_vol)
+    abort(404)
