@@ -80,7 +80,7 @@ def get_cpays(var):
 @app.route('/<click_map>')
 def test(click_map):
     for i in range(0,len(list_of_country)):
-        if click_map in list_of_country[i][1].decode('utf-8'):
+        if click_map in list_of_country[i][1]:
             cpays = list_of_country[i][6]
             nb_vol_dep = graph.data("match (vdep:ville)-[r]->(varr:ville) where vdep.codepays = {X} return vdep, varr", X = cpays)
             nb_vol_arr = graph.data("match (vdep:ville)-[r]->(varr:ville) where varr.codepays = {X} return vdep, varr", X = cpays)

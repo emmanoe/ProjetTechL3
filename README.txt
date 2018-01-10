@@ -37,3 +37,13 @@ MERGE (vdep)-[r:vol_vers]->(varr)
 
 SET r.nb_passagers = line.`NBPA2000`
 SET r.distance_KM = line.`DKM`;
+
+
+BUG CONNU
+=========
+
+Sur quelques machines,  une erreur apparait ( UnicodeDecodeError: 'ascii' codec can't decode byte ) quand on essaie de cliquer sur certains pays de la carte.
+Pour le régler, il suffit d'ajouter :
+										.decode('utf-8')
+à la fin de la ligne 83 du fichier webapp.py ce qui donnera :
+										if click_map in list_of_country[i][1].decode('utf-8'):
