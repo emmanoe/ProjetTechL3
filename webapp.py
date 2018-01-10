@@ -56,18 +56,13 @@ def simple():
     return render_template('vols.html',titre="les vols", ville = sec)
 
 
-
-@app.route('/world-50m.json')
-def d3js():
-    return render_template('graph.json')
-
 @app.route('/population.csv')
 def d3s():
     return render_template('population.csv')
 
 
 ## Generate  an array with all the Countries
-with open('./templates/population.csv','r') as Countrys:
+with open('./static/population.csv','r') as Countrys:
     reader = csv.reader(Countrys)
     nodes = [ n for n in Countrys][2:]
 
