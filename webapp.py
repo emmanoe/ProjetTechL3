@@ -73,9 +73,6 @@ for country in country_names:
 country_names = []; country_cpays = [];
 
 ##########################################
-def get_cpays(var):
-    print(var)
-    return "CAND"
 
 @app.route('/<click_map>')
 def test(click_map):
