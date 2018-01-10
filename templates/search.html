@@ -29,23 +29,32 @@
 
     <div class="col-sm-12 mx-auto">
 
-      {% if var is defined %}
-        <h1> {{var}} : </h1>
+      {% if selected_country is defined %}
+        <h1> {{selected_country}} </h1>
+        <h4> Départ(s) : {{ dep | length}} vol(s) </h4>
+        {% for ville in dep %}
+          <p>{{ ville['vdep']['nom'] | replace("*","")}} - {{ ville['varr']['nom'] | replace("*","")}} </p>
+        {% endfor %}
+        <br/>
+        <h4> Arrivée(s) : {{ arr | length}} vol(s) </h4>
+        {% for ville in arr %}  
+          <p>{{ ville['vdep']['nom'] | replace("*","")}} - {{ ville['varr']['nom'] | replace("*","")}} </p>
+        {% endfor %}
       {%endif%}
-
-      {% if var is not defined %}
+      
+      {% if selected_country is not defined %}
       <h1>TRAJET : {{dep | replace("*","")}} - {{arr | replace("*","")}} </h1>
       {%endif%}
 
-      {%if info_vol | length > 0%} 
+      {%if dist | length > 0%} 
       <p><b>INFOS :</b></p>
-        <p> {{info_vol | length}} vol direct, distance : {{info_vol}}</p>
-      {% elif var is not defined %}
+        <p> {{dist | length}} vol direct, distance : {{dist | replace("[{u'r.distance_KM': u'","") | replace("'}]"," KM ")}}, nombre de passagers/an : {{nbpass | replace("[{u'r.nb_passagers': u'","") | replace("'}]","")}} </p>
+      {% elif selected_country is not defined %}
         <p> Actuellement, il n'existe aucun vol direct pour cette liaison </p>
       {% endif %}
 
       {%if escal | length > 0 %}
-        <p><b>ESCALE:</b></p> 
+        <p><b>ESCALES POSSIBLES:</b></p> 
         {% for ville in escal %}
           <p>{{ ville['escal']['nom'] | replace("*","")}}</p>
         {% endfor %}
