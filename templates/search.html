@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> Lignes aeriennes </title>
-  <link href="{{ url_for('static', filename='bootstrap.min.css')}}" rel="stylesheet"/>
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet"/>
   <link rel="shortcut icon" href="{{ url_for('static', filename='images/plane.ico')}}">
 </head>
 
@@ -76,7 +76,7 @@
           .force("charge", d3.forceManyBody())
           .force("center", d3.forceCenter(width / 2, height / 2));
 
-      d3.json("./static/miserablesmin7.json", function(error, graph) {
+      d3.json("./static/json/miserablesmin.json", function(error, graph) {
         if (error) throw error;
 
         var link = svg.append("g")
