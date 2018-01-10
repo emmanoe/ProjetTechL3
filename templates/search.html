@@ -48,7 +48,7 @@
 
       {%if dist | length > 0%} 
       <p><b>INFOS :</b></p>
-        <p> {{dist | length}} vol direct, distance : {{dist | replace("[{u'r.distance_KM': u'","") | replace("'}]"," KM ")}}, nombre de passagers/an : {{nbpass | replace("[{u'r.nb_passagers': u'","") | replace("'}]","")}} </p>
+        <p> {{dist | length}} vol direct, distance : {{dist | replace("[{u'r.distance_KM': u'","") | replace("'}]"," KM ") | replace("[{'r.distance_KM': '","") }}, nombre de passagers/an : {{nbpass | replace("[{u'r.nb_passagers': u'","") | replace("'}]","")  | replace("[{'r.nb_passagers': '","")}} </p>
       {% elif selected_country is not defined %}
         <p> Actuellement, il n'existe aucun vol direct pour cette liaison </p>
       {% endif %}
