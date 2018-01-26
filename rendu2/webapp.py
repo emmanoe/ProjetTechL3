@@ -1,8 +1,11 @@
+# -*- coding:utf-8 -*-
+
 import time
 from flask import *
 import json
 import sys
 import csv
+from model import graph
 
 #NE PAS MODIFIER LA LIGNE SUIVANTE
 app = Flask(__name__)
@@ -77,7 +80,7 @@ country_names = []; country_cpays = [];
 @app.route('/<click_map>')
 def test(click_map):
     for i in range(0,len(list_of_country)):
-        if click_map in list_of_country[i][1]:
+        if click_map in list_of_country[i][1].decode("utf-8"):
             cpays = list_of_country[i][6]
             nb_vol_dep = graph.data("match (vdep:ville)-[r]->(varr:ville) where vdep.codepays = {X} return vdep, varr", X = cpays)
             nb_vol_arr = graph.data("match (vdep:ville)-[r]->(varr:ville) where varr.codepays = {X} return vdep, varr", X = cpays)
