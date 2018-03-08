@@ -59,11 +59,6 @@ def simple():
     return render_template('vols.html',titre="les vols", ville = sec)
 
 
-@app.route('/population.csv')
-def d3s():
-    return render_template('population.csv')
-
-
 ## Generate  an array with all the Countries
 with open('./static/population.csv','r') as Countrys:
     reader = csv.reader(Countrys)
@@ -86,3 +81,11 @@ def test(click_map):
             nb_vol_arr = graph.data("match (vdep:ville)-[r]->(varr:ville) where varr.codepays = {X} return vdep, varr", X = cpays)
             return render_template('search.html',selected_country=click_map, dep=nb_vol_dep, arr = nb_vol_arr)
     abort(404)
+
+
+@app.route('/chuwebapp')
+def bddjson():
+    return render_template('chuwebapp.html')
+
+
+
