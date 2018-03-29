@@ -87,5 +87,7 @@ def test(click_map):
 def bddjson():
     return render_template('chuwebapp.html')
 
-
+@app.route('/trendline')
+def trend():
+    return render_template('trendline.html')
 
