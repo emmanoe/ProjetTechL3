@@ -13,8 +13,8 @@ app.secret_key = 'projettechnologique'
 
 from py2neo import Graph, DBMS, authenticate
 my_dbms = DBMS("http://localhost:7474/")
-authenticate("localhost:7474", "neo4j", "3789")
-graph = Graph(password="3789")
+authenticate("localhost:7474", "neo4j", "pdnejoh")
+graph = Graph(password="pdnejoh")
 
 @app.route("/")
 def homepage():
@@ -30,9 +30,9 @@ def index():
         simple = graph.data("match (vdep:ville)-[resc:vol_vers]->(escal:ville)-[r:vol_vers]->(varr:ville) where vdep.nom = {X} and varr.nom = {Y}  return escal, resc",X= dep,Y= arr)
         return render_template('search.html',titre="les vols", dist = dist, nbpass = nbpass, escal = simple, dep=dep, arr=arr)
     else:
-        #A mettre dans un py 
+        #A mettre dans un py
         langDepArray=[];
-        langArrArray=[]; 
+        langArrArray=[];
         with open('./static/ITA_2000.csv','r') as vol:
             reader = csv.reader(vol)
             nodes = [ n for n in vol][2:]
@@ -60,7 +60,7 @@ def simple():
 
 
 ## Generate  an array with all the Countries
-with open('./static/population.csv','r') as Countrys:
+with open('./static/population1.csv','r') as Countrys:
     reader = csv.reader(Countrys)
     nodes = [ n for n in Countrys][2:]
 
@@ -75,19 +75,15 @@ country_names = []; country_cpays = [];
 @app.route('/<click_map>')
 def test(click_map):
     for i in range(0,len(list_of_country)):
-        if click_map in list_of_country[i][1].decode("utf-8"):
+        if click_map == list_of_country[i][1]:
+            print(click_map)
             cpays = list_of_country[i][6]
-            nb_vol_dep = graph.data("match (vdep:ville)-[r]->(varr:ville) where vdep.codepays = {X} return vdep, varr", X = cpays)
-            nb_vol_arr = graph.data("match (vdep:ville)-[r]->(varr:ville) where varr.codepays = {X} return vdep, varr", X = cpays)
-            return render_template('search.html',selected_country=click_map, dep=nb_vol_dep, arr = nb_vol_arr)
+            print(cpays)
+            nb_vol_dep = graph.data("match (e) where e.countrycodes={X} return e", X=cpays)
+            return render_template('search.html', selected_country=click_map, dep=nb_vol_dep)
     abort(404)
 
 
 @app.route('/chuwebapp')
 def bddjson():
     return render_template('chuwebapp.html')
-
-@app.route('/trendline')
-def trend():
-    return render_template('trendline.html')
-
