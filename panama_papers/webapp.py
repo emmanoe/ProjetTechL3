@@ -79,7 +79,7 @@ def test(click_map):
             print(click_map)
             cpays = list_of_country[i][6]
             print(cpays)
-            nb_vol_dep = graph.data("match (e) where e.countrycodes={X} return e", X=cpays)
+            nb_vol_dep = graph.data("match (e:entity) where e.countrycodes={X} return e", X=cpays)
             return render_template('search.html', selected_country=click_map, dep=nb_vol_dep)
     abort(404)
 
