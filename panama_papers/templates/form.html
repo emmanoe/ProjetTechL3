@@ -19,29 +19,23 @@
 		$("#destination").removeAttr("disabled"); // enables select
 	};
 
-</script> 
+</script>
 
 <form method="post" action="">
-	<label>Avoir les informations sur le vol : </label>
-
+	<label>Avoir les informations sur une ville : </label>
     <select id="depart" name="depart" onchange="filterCity();">
-      <option>ville de départ</option>
-      <ul>
-      	{% for i in range(langDepArray | length) %}
-      		<option value= "{{langDepArray[i][2]}}"> {{ langDepArray[i][2] | replace("*","")}}</option>
-	    {% endfor %}
-	  </ul>	
-    </select>	
+      <option>Pays</option>
+    </select>
 
 
 	<select id="destination" name="destination" disabled>
-      <option>ville de destination</option>
+      <option>Ville</option>
       <ul>
-	    {% for i in range(langArrArray | length) %}
-	        <option data-province="{{langArrArray[i][2]}}" value="{{ langArrArray[i][5] }}"> {{ langArrArray[i][5] | replace("*","")}}</option>
+	    {% for i in range(langVilleArray | length) %}
+	        <option data-province="{{langVilleArray[i][2]}}" value="{{ langVilleArray[i][5] }}"> {{ langVilleArray[i][5] | replace("*","")}}</option>
 	    	}
 	    {% endfor %}
-	  </ul>		
+	  </ul>
 	</select>
 
 	<input type="submit" value="chercher" style="font-size:11px;" >
@@ -49,11 +43,10 @@
 	<span id="option-container" style="visibility: hidden; position:absolute;"></span>
 
 
-	
+
 
 	<script language="JavaScript" type="text/javascript" src="./static/js/jquery-1.2.6.min.js"></script>
 	<script language="JavaScript" type="text/javascript" src="./static/js/jquery-ui-personalized-1.5.2.packed.js"></script>
 	<script language="JavaScript" type="text/javascript" src="./static/js/sprinkle.js"></script>
 
 </form>
-

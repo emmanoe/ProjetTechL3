@@ -16,6 +16,17 @@ my_dbms = DBMS("http://localhost:7474/")
 authenticate("localhost:7474", "neo4j", "3789")
 graph = Graph(password="3789")
 
+## Generate an array with all the Countries used in our function
+with open('./static/population1.csv','r') as Countrys:
+    reader = csv.reader(Countrys)
+    nodes = [ n for n in Countrys][2:]
+
+country_names = csv.reader(nodes, delimiter = ',')
+list_of_country = []
+for country in country_names:
+    list_of_country.append(country)
+##########################################
+
 @app.route("/")
 def homepage():
     return render_template("main.html")
@@ -31,21 +42,21 @@ def index():
         return render_template('search.html',titre="les vols", dist = dist, nbpass = nbpass, escal = simple, dep=dep, arr=arr)
     else:
         #A mettre dans un py
-        langDepArray=[];
-        langArrArray=[];
+        langPaysArray=[];
+        langVilleArray=[];
         with open('./static/ITA_2000.csv','r') as vol:
             reader = csv.reader(vol)
             nodes = [ n for n in vol][2:]
 
             node_names = csv.reader(nodes, delimiter = ';')
             for vname in node_names:
-                langDepArray.append(vname)#5
-                langArrArray.append(vname)#2
-            #langDepArray = sorted(set(langDepArray))
-            #langArrArray = sorted(set(langArrArray))
+                langPaysArray.append(vname)#5
+                langVilleArray.append(vname)#2
+            #langPaysArray = sorted(set(langPaysArray))
+            #langVilleArray = sorted(set(langVilleArray))
         ####################
         # langArray = getArray()
-        return render_template('form.html',  langDepArray=langDepArray, langArrArray= langArrArray)
+        return render_template('form.html',  langPaysArray=list_of_country, langVilleArray= langVilleArray)
 
 
 @app.route('/vols')
@@ -59,18 +70,6 @@ def simple():
     return render_template('vols.html',titre="les vols", ville = sec)
 
 
-## Generate  an array with all the Countries
-with open('./static/population1.csv','r') as Countrys:
-    reader = csv.reader(Countrys)
-    nodes = [ n for n in Countrys][2:]
-
-country_names = csv.reader(nodes, delimiter = ',')
-list_of_country = []
-for country in country_names:
-    list_of_country.append(country)
-country_names = []; country_cpays = [];
-
-##########################################
 
 @app.route('/<click_map>')
 def test(click_map):
