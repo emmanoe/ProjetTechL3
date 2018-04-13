@@ -13,8 +13,8 @@ app.secret_key = 'projettechnologique'
 
 from py2neo import Graph, DBMS, authenticate
 my_dbms = DBMS("http://localhost:7474/")
-authenticate("localhost:7474", "neo4j", "pdnejoh")
-graph = Graph(password="pdnejoh")
+authenticate("localhost:7474", "neo4j", "3789")
+graph = Graph(password="3789")
 
 @app.route("/")
 def homepage():
@@ -87,3 +87,7 @@ def test(click_map):
 @app.route('/chuwebapp')
 def bddjson():
     return render_template('chuwebapp.html')
+
+@app.route('/trendline')
+def trend():
+    return render_template('trendline.html')

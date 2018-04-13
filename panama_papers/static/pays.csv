@@ -1,146 +1,160 @@
 entity,Country,count(n.countries),Source
 node,,140,
-node,Samoa,971,WSM
-node,Jersey,4517,JEY
-node,SaudiArabia,44,SAU
-node,Spain,643,ESP
-node,Japan,12,JPN
-node,Philippines,24,PHL
-node,Uruguay,1565,URY
-node,Latvia,24,LVA
-node,Pakistan,1,PAK
-node,Malta,145,MLT
-node,ElSalvador,101,SLV
-node,TurksandCaicosIslands,4,TCA
-node,Finland,20,FIN
-node,Guatemala,584,GTM
-node,Cuba,8,CUB
-node,Paraguay,54,PRY
-node,Haiti,5,HTI
-node,Libya,1,LBY
+node,Samoa,1530,WSM
+node,Jersey,14142,JEY
+node,Jamaica,4,JAM
+node,Slovakia,1,SVK
+node,Saudi Arabia,106,SAU
+node,Spain,1109,ESP
+node,Japan,24,JPN
+node,Philippines,39,PHL
+node,Uruguay,4844,URY
+node,Montenegro,13,MNE
+node,Latvia,1379,LVA
+node,Pakistan,3,PAK
+node,Malta,671,MLT
+node,El Salvador,228,SLV
+node,Turks and Caicos Islands,12,TCA
+node,Finland,63,FIN
+node,Guatemala,1113,GTM
+node,Cuba,11,CUB
+node,Paraguay,126,PRY
+node,Haiti,8,HTI
+node,Libya,2,LBY
 node,Lesotho,1,LSO
-node,Belarus,1,BLR
-node,SouthAfrica,30,ZAF
-node,Switzerland,15929,CHE
+node,Belarus,16,BLR
+node,South Africa,106,ZAF
+node,Switzerland,36634,CHE
 node,Liberia,1,LBR
-node,TrinidadandTobago,4,TTO
-node,Kuwait,36,KWT
-node,Monaco,1770,MCO
-node,Belize,523,BLZ
-node,Kenya,10,KEN
-node,Denmark,6,DNK
-node,India,8,IND
-node,Tanzania,1,TZA
-node,Hungary,64,HUN
-node,Bolivia,34,BOL
-node,Malaysia,19,MYS
-node,Thailand,277,THA
-node,Niue,279,NIU
-node,Gibraltar,291,GIB
-node,CookIslands,1,COK
-node,PuertoRico,1,PRI
+node,Trinidad and Tobago,6,TTO
+node,Kuwait,60,KWT
+node,Monaco,3103,MCO
+node,Belize,1304,BLZ
+node,Kenya,25,KEN
+node,Denmark,14,DNK
+node,India,20,IND
+node,Tanzania,3,TZA
+node,Hungary,86,HUN
+node,Bolivia,93,BOL
+node,Malaysia,36,MYS
+node,Thailand,956,THA
+node,Niue,326,NIU
+node,Angola,10,AGO
+node,Gibraltar,2007,GIB
+node,Cook Islands,1,COK
+node,Puerto Rico,1,PRI
 node,Yemen,1,YEM
 node,Djibouti,1,DJI
-node,Liechtenstein,674,LIE
-node,Dominica,23,DMA
-node,Brazil,636,BRA
-node,Iceland,1,ISL
-node,Barbados,4,BRB
-node,Mauritius,216,MUS
-node,China,961,CHN
-node,SaintVincentandtheGrenadines,4,VCT
-node,Ukraine,39,UKR
-node,Tunisia,3,TUN
-node,Singapore,617,SGP
-node,Mexico,19,MEX
-node,Iran,3,IRN
-node,Egypt,13,EGY
-node,CzechRepublic,5,CZE
-node,Morocco,16,MAR
-node,Canada,132,CAN
-node,Cyprus,1009,CYP
-node,Côted'Ivoire,7,CIV
-node,Colombia,385,COL
-node,Sweden,17,SWE
-node,Germany,109,DEU
+node,Liechtenstein,2043,LIE
+node,Dominica,62,DMA
+node,Brazil,1326,BRA
+node,Iceland,15,ISL
+node,Barbados,32,BRB
+node,Mauritius,1200,MUS
+node,China,3184,CHN
+node,Brunei,1,BRN
+node,Saint Vincent and the Grenadines,6,VCT
+node,Zambia,2,ZMB
+node,Ukraine,273,UKR
+node,Tunisia,4,TUN
+node,Singapore,4051,SGP
+node,Mexico,64,MEX
+node,Iran,4,IRN
+node,Egypt,38,EGY
+node,Czech Republic,33,CZE
+node,Morocco,41,MAR
+node,Vanuatu,4,VUT
+node,Canada,345,CAN
+node,Côte d'Ivoire,19,CIV
+node,Cyprus,3556,CYP
+node,Colombia,1811,COL
+node,Sweden,53,SWE
+node,Germany,173,DEU
 node,Sudan,1,SDN
-node,Curaçao,12,CUW
-node,HongKong,14022,HKG
-node,Bahamas,1270,BHS
-node,DominicanRepublic,185,DOM
-node,AmericanSamoa,1,ASM
-node,Qatar,9,QAT
-node,Romania,6,ROU
-node,U.S.VirginIslands,1,VIR
-node,Peru,16,PER
-node,Indonesia,7,IDN
-node,Italy,243,ITA
-node,Honduras,7,HND
-node,Azerbaijan,1,AZE
-node,UnitedArabEmirates,2306,ARE
-node,Uzbekistan,1,UZB
-node,Nigeria,7,NGA
+node,Curaçao,29,CUW
+node,Hong Kong,37391,HKG
+node,Bahamas,3791,BHS
+node,Dominican Republic,477,DOM
+node,American Samoa,1,ASM
+node,Qatar,27,QAT
+node,Romania,7,ROU
+node,U.S. Virgin Islands,4,VIR
+node,Peru,46,PER
+node,Indonesia,28,IDN
+node,Italy,340,ITA
+node,Honduras,24,HND
+node,Cameroon,1,CMR
+node,Azerbaijan,8,AZE
+node,United Arab Emirates,6998,ARE
+node,Uzbekistan,5,UZB
+node,Nigeria,21,NGA
 node,Guam,1,GUM
-node,AntiguaandBarbuda,8,ATG
-node,Estonia,131,EST
-node,CaymanIslands,37,CYM
-node,Syria,2,SYR
-node,Macao,2,MAC
-node,Poland,62,POL
-node,Oman,1,OMN
-node,Australia,38,AUS
-node,Norway,5,NOR
-node,Botswana,4,BWA
-node,France,134,FRA
-node,SouthKorea,5,KOR
-node,Anguilla,8,AIA
-node,Argentina,80,ARG
+node,Antigua and Barbuda,18,ATG
+node,Mali,8,MLI
+node,Estonia,862,EST
+node,Central African Republic,1,CAF
+node,Cayman Islands,106,CYM
+node,Syria,4,SYR
+node,Macao,25,MAC
+node,Poland,157,POL
+node,Oman,2,OMN
+node,Australia,94,AUS
+node,Norway,13,NOR
+node,Botswana,6,BWA
+node,France,278,FRA
+node,South Korea,8,KOR
+node,Anguilla,10,AIA
+node,Argentina,267,ARG
 node,Uganda,1,UGA
-node,SintMaarten(Dutchpart),1,SXM
-node,Ireland,150,IRL
-node,UnitedKingdom,3149,GBR
-node,Luxembourg,6063,LUX
-node,NewZealand,22,NZL
-node,IsleofMan,1335,IMN
+node,Sint Maarten (Dutch part),1,SXM
+node,Ireland,307,IRL
+node,United Kingdom,9460,GBR
+node,Kazakhstan,4,KAZ
+node,Luxembourg,10436,LUX
+node,New Zealand,60,NZL
+node,Isle of Man,4647,IMN
 node,Malawi,1,MWI
-node,Venezuela,364,VEN
-node,Mozambique,2,MOZ
-node,Slovenia,16,SVN
-node,UnitedStates,922,USA
-node,Panama,6538,PAN
-node,Chad,1,TCD
-node,Ecuador,888,ECU
-node,Lithuania,25,LTU
-node,Israel,376,ISR
-node,Aruba,18,ABW
-node,SriLanka,2,LKA
-node,SaintLucia,1,LCA
-node,Croatia,2,HRV
-node,CostaRica,410,CRI
-node,BritishVirginIslands,84,VGB
-node,Nicaragua,8,NIC
-node,Bulgaria,25,BGR
-node,Bermuda,63,BMU
-node,Austria,9,AUT
-node,Greece,102,GRC
-node,Chile,53,CHL
-node,Portugal,70,PRT
-node,Belgium,34,BEL
-node,Andorra,293,AND
-node,Guernsey,2315,GGY
-node,Lebanon,182,LBN
-node,Jordan,390,JOR
-node,Seychelles,328,SYC
-node,Macedonia,1,MKD
-node,Bahrain,6,BHR
-node,Namibia,2,NAM
-node,Senegal,2,SEN
-node,Ghana,1,GHA
-node,Georgia,1,GEO
-node,Zimbabwe,3,ZWE
-node,Turkey,24,TUR
-node,SaintKittsandNevis,37,KNA
-node,Taiwan,1127,TWN
-node,Russia,723,RUS
-node,VietNam,2,VNM
-node,Netherlands,51,NLD
+node,Venezuela,720,VEN
+node,Mozambique,3,MOZ
+node,Slovenia,21,SVN
+node,United States,2966,USA
+node,Panama,14651,PAN
+node,Chad,11,TCD
+node,Ecuador,1768,ECU
+node,Lithuania,29,LTU
+node,Israel,647,ISR
+node,Aruba,27,ABW
+node,Albania,2,ALB
+node,Sri Lanka,3,LKA
+node,Saint Lucia,3,LCA
+node,Croatia,3,HRV
+node,Costa Rica,878,CRI
+node,British Virgin Islands,951,VGB
+node,Nicaragua,12,NIC
+node,Bulgaria,50,BGR
+node,Bermuda,140,BMU
+node,Austria,23,AUT
+node,Greece,214,GRC
+node,Chile,139,CHL
+node,Portugal,227,PRT
+node,Belgium,58,BEL
+node,Andorra,472,AND
+node,Guernsey,7219,GGY
+node,Lebanon,453,LBN
+node,Jordan,1546,JOR
+node,Seychelles,611,SYC
+node,Macedonia,2,MKD
+,Bahrain,12,BHR
+,Namibia,2,NAM
+,Senegal,3,SEN
+,Ghana,3,GHA
+,Georgia,1,GEO
+,Zimbabwe,8,ZWE
+,Turkey,99,TUR
+,Saint Kitts and Nevis,187,KNA
+,Taiwan,2673,TWN
+,Bangladesh,2,BGD
+,Moldova,2,MDA
+,Russia,4167,RUS
+,Viet Nam,7,VNM
+,Netherlands,175,NLD

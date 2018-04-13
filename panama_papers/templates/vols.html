@@ -102,6 +102,7 @@ body {
         }
 
         function valueFormat(d) {
+          console.log("d")
           if (d > 1000000000) {
             return Math.round(d / 1000000000 * 10) / 10 + "B";
           } else if (d > 1000000) {
