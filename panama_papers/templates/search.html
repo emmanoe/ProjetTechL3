@@ -37,7 +37,7 @@
         {% for e in dep %}
           <tr>
             {% for key, value in e.items()  %}
-              <td><a href="/">{{value['name']}}</a></td>
+              <td><a href={{ url_for('holla', var=value['name'])  }}>{{value['name']}}</a></td>
               <td>{{value['jurisdiction']}}</td>
               <td>{{value['service_provider']}}</td>
               <td>{{value['incorporation_date']}}</td>

@@ -21,27 +21,9 @@
 
 </script>
 
-<form method="post" action="">
-	<label>Avoir les informations sur une ville : </label>
-    <select id="depart" name="depart" onchange="filterCity();">
-      <option>Pays</option>
-    </select>
-
-
-	<select id="destination" name="destination" disabled>
-      <option>Ville</option>
-      <ul>
-	    {% for i in range(langVilleArray | length) %}
-	        <option data-province="{{langVilleArray[i][2]}}" value="{{ langVilleArray[i][5] }}"> {{ langVilleArray[i][5] | replace("*","")}}</option>
-	    	}
-	    {% endfor %}
-	  </ul>
-	</select>
-
-	<input type="submit" value="chercher" style="font-size:11px;" >
-
-	<span id="option-container" style="visibility: hidden; position:absolute;"></span>
-
+<form method="post">
+	<label>chercher  : </label>
+  <p><input type="text" name="recherche" /></p>
 
 
 
