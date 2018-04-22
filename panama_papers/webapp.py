@@ -57,7 +57,9 @@ def simple():
     return render_template('vols.html',titre="les vols", ville = sec)
 
 
-## Generate  an array with all the Countries
+## Genere un tableau avec le nom tous les pays
+## impliqués dans l'affaire des panama papers
+## ils sont stockés dans un fichier population csv
 with open('./static/population1.csv','r') as Countrys:
     reader = csv.reader(Countrys)
     nodes = [ n for n in Countrys][2:]
@@ -66,29 +68,21 @@ country_names = csv.reader(nodes, delimiter = ',')
 list_of_country = []
 for country in country_names:
     list_of_country.append(country)
-country_names = []; country_cpays = [];
-
-##########################################
-
+    
+## /<click_map> est une route variable
+## apres avoir selctionné un pays sur
+## la carte une route est automatiquement
+## générée.
+## On vérifie que le pays cliqué appartient
+## fait bien parti des pays impliqués.
 @app.route('/<click_map>')
 def test(click_map):
     for i in range(0,len(list_of_country)):
-        if click_map == list_of_country[i][1]:
-            print(click_map)
-            cpays = list_of_country[i][6]
-            print(cpays)
-            nb_vol_dep = graph.data("match (e) where e.countrycodes={X} return e", X=cpays)
-            return render_template('search.html', selected_country=click_map, dep=nb_vol_dep)
-    abort(404) ## Message d'erreur
-
-
-@app.route('/chuwebapp')
-def bddjson():
-    return render_template('chuwebapp.html')
-
-@app.route('/trendline')
-def trend():
-    return render_template('trendline.html')
+        if click_map == list_of_country[i][1]: #Complexité non optimale (O(len))
+            cpays = list_of_country[i][6] #les cases [i][j] correspodent au infos sur le pays dont le code du pays(cpays) pour j = 6
+            infos_pays = graph.data("match (e) where e.countrycodes={X} return e", X=cpays) #on récupére toutes les infos sur ce pays
+            return render_template('search.html', selected_country=click_map, dep=infos_pays)
+    return render_template('error.html')
 
 
 @app.route('/graph')

@@ -1,22 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Panama Papers Leaks </title>
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet"/>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/buildingicon.png')}}">
-  </head>
-
-  <body>
-
-    {% include 'header.html' %}
+{% include 'header.html' %}
 
 
     <!-- main page text canvevas -->
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-12 mx-auto">
-
+          <style>
+            canvas {
+              position: absolute;
+              left: 0;
+              right: 0;
+              margin:auto;
+            }
+          </style>
         <canvas id="myCanvas" width="500" height="200"
           style="border:1px solid #000000;">
 
@@ -24,15 +20,16 @@
             var c = document.getElementById("myCanvas");
             var ctx = c.getContext("2d");
             ctx.font = "bold 15px Arial";
-            ctx.fillText("CHERCHER/TROUVER",10,40);
+            ctx.fillText("Bienvenue",10,40);
             ctx.font = "15px Arial";
-            ctx.fillText("Ce site met en place un serveur Flask permettant aux utilisateurs ",10,70);
-            ctx.fillText("de questioner notre base de donnée contenant de nombreuses ",10,100);
-            ctx.fillText("informations sur la récente affaire des Panama Papers.   ",10,130);
-            ctx.fillText("Explorer nos fonctionnalités !",10,160);
+            ctx.fillText("Ce site permet aux utilisateurs de questioner notre base ",10,70);
+            ctx.fillText("de donnée (Neo4j) contenant de nombreuses informations",10,100);
+            ctx.fillText("sur la récente affaire des Panama Papers.   ",10,130);
+            ctx.fillText("Explorez nos fonctionnalités !",10,160);
           </script>
         </canvas>
       </div>
     </div>
   </body>
+  {% include 'footer.html' %}
 </html>

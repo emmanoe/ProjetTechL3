@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Panama Papers Leaks </title>
-  <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet"/>
-  <link rel="shortcut icon" href="{{ url_for('static', filename='images/buildingicon.png')}}">
-</head>
-
 {% include 'header.html' %}
 {{nodes}}
 <br/>
@@ -42,3 +33,5 @@
           <h4>  {{value['name']}}   {{value['address']}}  {{value['countries']}} {{value['status']}}  </h4>
         {% endfor %}
       {% endfor %}
+
+{% include 'footer.html' %}

@@ -1,11 +1,3 @@
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Panama Papers Leaks </title>
-  <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet"/>
-  <link rel="shortcut icon" href="{{ url_for('static', filename='images/buildingicon.png')}}">
-</head>
-
 {% include 'header.html' %}
 
 <style>
@@ -43,7 +35,21 @@ body {
 }
 </style>
 
+<style>
+aside{
+  font-family: Gill Sans, Verdana;
+  font-size: 11px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+</style>
 
+<aside>
+  - Pays dont lesquels des dirigeants/politiques sont impliqués dans l'affaire des panama papers :
+</br>* survol = nombre de sociétés écran
+</aside>
 <div class="container">
   <div class="row">
     <div class="col-sm-12 mx-auto">
@@ -262,12 +268,4 @@ body {
     </div>
   </div>
 </div>
-<!--
-  <div>
-    <ul>
-      {% for v in ville[1:] %}
-            <li> {{ v['n.nom'] }} ,  {{ v['n.codepays'] }} </li>
-        {% endfor %}
-    </ul>
-  </div>
-  -->
+{% include 'footer.html' %}
