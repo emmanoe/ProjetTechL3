@@ -24,26 +24,10 @@ def homepage():
 def index():
     if request.method == 'POST' :
         dep = request.form['recherche'];
-        print("ncouncou")
         simple = graph.data("MATCH (n:entity) WHERE n.name CONTAINS {X} RETURN n", X=dep) #~ '.*{X}.*'
         return render_template('search.html',titre="resultats", dep = simple)
     else:
-        #A mettre dans un py
-        langDepArray=[];
-        langArrArray=[];
-        with open('./static/ITA_2000.csv','r') as vol:
-            reader = csv.reader(vol)
-            nodes = [ n for n in vol][2:]
-
-            node_names = csv.reader(nodes, delimiter = ';')
-            for vname in node_names:
-                langDepArray.append(vname)#5
-                langArrArray.append(vname)#2
-            #langDepArray = sorted(set(langDepArray))
-            #langArrArray = sorted(set(langArrArray))
-        ####################
-        # langArray = getArray()
-        return render_template('form.html',  langDepArray=langDepArray, langArrArray= langArrArray)
+        return render_template('form.html')
 
 
 @app.route('/vols')
@@ -53,7 +37,7 @@ def simple():
     authenticate("localhost:7474", "neo4j", "3789")
     server = "localhost:7474"
     graph = Graph(password="3789")
-    sec = graph.data("MATCH (n) RETURN n.nom, n.codepays order by n.codepays") ## Augmente le temps de chargement de la route /vol
+    sec = graph.data("MATCH (n) RETURN n.nom, n.codepays order by n.codepays")
     return render_template('vols.html',titre="les vols", ville = sec)
 
 
