@@ -53,7 +53,7 @@ def simple():
     authenticate("localhost:7474", "neo4j", "3789")
     server = "localhost:7474"
     graph = Graph(password="3789")
-    sec = graph.data("MATCH (n) RETURN n.nom, n.codepays order by n.codepays")
+    sec = graph.data("MATCH (n) RETURN n.nom, n.codepays order by n.codepays") ## Augmente le temps de chargement de la route /vol
     return render_template('vols.html',titre="les vols", ville = sec)
 
 
@@ -68,7 +68,7 @@ country_names = csv.reader(nodes, delimiter = ',')
 list_of_country = []
 for country in country_names:
     list_of_country.append(country)
-    
+
 ## /<click_map> est une route variable
 ## apres avoir selctionné un pays sur
 ## la carte une route est automatiquement
@@ -82,7 +82,7 @@ def test(click_map):
             cpays = list_of_country[i][6] #les cases [i][j] correspodent au infos sur le pays dont le code du pays(cpays) pour j = 6
             infos_pays = graph.data("match (e) where e.countrycodes={X} return e", X=cpays) #on récupére toutes les infos sur ce pays
             return render_template('search.html', selected_country=click_map, dep=infos_pays)
-    return render_template('error.html')
+    return render_template('about.html')
 
 
 @app.route('/graph')
