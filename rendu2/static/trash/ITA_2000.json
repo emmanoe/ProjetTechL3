@@ -1,9 +1,0 @@
-{
- "nodes": [
-    {"id": "PARIS", "group": 1},
-    {"id": "TOULOUSE", "group": 1}
-  ],
-  "links": [
-    {"source": "PARIS", "target": "TOULOUSE", "value": 1}
-  ]
-}
