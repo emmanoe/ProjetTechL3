@@ -1,0 +1,144 @@
+{% include 'header.html' %}
+
+<!-- Membres
+ ANDRIANIRINA Diane
+ DELAR Emmanoé
+ SADOURI Massinissa -->
+
+
+<html>
+<head>
+  <title>À Propos</title>
+  <meta charset="utf-8">
+
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,200italic,600italic&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+
+  <script src="http://emmanoe.delar.emi.u-bordeaux.fr/js/jquery.min.js"></script>
+  <script src="http://emmanoe.delar.emi.u-bordeaux.fr/js/d3.min.js"></script>
+  <script src="http://emmanoe.delar.emi.u-bordeaux.fr/js/d3-transform.js"></script>
+  <script src="http://emmanoe.delar.emi.u-bordeaux.fr/js/extarray.js"></script>
+  <script src="http://emmanoe.delar.emi.u-bordeaux.fr/js/misc.js"></script>
+  <script src="http://emmanoe.delar.emi.u-bordeaux.fr/js/micro-observer.js"></script>
+  <script src="http://emmanoe.delar.emi.u-bordeaux.fr/js/microplugin.js"></script>
+  <script src="http://emmanoe.delar.emi.u-bordeaux.fr/js/bubble-chart.js"></script>
+  <script src="http://emmanoe.delar.emi.u-bordeaux.fr/js/central-click.js"></script>
+  <script src="http://emmanoe.delar.emi.u-bordeaux.fr/js/lines.js"></script>
+
+  <div class="col-sm-12 mx-auto">
+    <center>Désolé, nous n'avons pas d'informations concernant cet entité. Pas de panique, notre base de donnée contient : </center>
+  </div>
+  </div class="container">
+    <script>
+    $(document).ready(function () {
+    var bubbleChart = new d3.svg.BubbleChart({
+      supportResponsive: true,
+      //container: => use @default
+      size: 600,
+      //viewBoxSize: => use @default
+      innerRadius: 600 / 3.5,
+      //outerRadius: => use @default
+      radiusMin: 50,
+
+      // Toutes ces informations ont été récupérées à l'aide de requettes Cypher (count) sur la base de donnée
+      data: {
+        items: [
+          {text: "+ Entitées", count: "20000"},
+          {text: "MB de données", count: "500"},
+          {text: "Addresses", count: "202"},
+          {text: "+ Noms d'officiers", count: "10000"},
+          {text: "Pays impliqués", count: "160"},
+          {text: "Date de création", count: "9485"},
+          {text: "Sources ID", count: "1"},
+          {text: "Cabinet (Mossack Fonseca) ", count: "1"},
+          {text: "Autre", count: "170"},
+        ],
+        eval: function (item) {return item.count;},
+        classed: function (item) {return item.text.split(" ").join("");}
+      },
+      plugins: [
+        {
+          name: "central-click",
+          options: {
+            text: "(Savoir plus)",
+            style: {
+              "font-size": "12px",
+              "font-style": "italic",
+              "font-family": "Source Sans Pro, sans-serif",
+              //"font-weight": "700",
+              "text-anchor": "middle",
+              "fill": "white"
+            },
+            attr: {dy: "65px"},
+            centralClick: function() {
+              alert("alert");
+            }
+          }
+        },
+        {
+          name: "lines",
+          options: {
+            format: [
+              {// Line #0
+                textField: "count",
+                classed: {count: true},
+                style: {
+                  "font-size": "28px",
+                  "font-family": "Source Sans Pro, sans-serif",
+                  "text-anchor": "middle",
+                  fill: "white"
+                },
+                attr: {
+                  dy: "0px",
+                  x: function (d) {return d.cx;},
+                  y: function (d) {return d.cy;}
+                }
+              },
+              {// Line #1
+                textField: "text",
+                classed: {text: true},
+                style: {
+                  "font-size": "14px",
+                  "font-family": "Source Sans Pro, sans-serif",
+                  "text-anchor": "middle",
+                  fill: "white"
+                },
+                attr: {
+                  dy: "20px",
+                  x: function (d) {return d.cx;},
+                  y: function (d) {return d.cy;}
+                }
+              }
+            ],
+            centralFormat: [
+              {// Line #0
+                style: {"font-size": "50px"},
+                attr: {}
+              },
+              {// Line #1
+                style: {"font-size": "30px"},
+                attr: {dy: "40px"}
+              }
+            ]
+          }
+        }]
+    });
+    });
+    </script>
+  </div>
+  <style>
+    .bubbleChart {
+      min-width: 100px;
+      max-width: 700px;
+      height: 700px;
+      margin: 0 auto;
+    }
+    .bubbleChart svg{
+      background: #FFFFFF;
+    }
+  </style>
+</head>
+<body style="background: #FFFFFF">
+<div class="bubbleChart"/>
+</body>
+</html>
+{% include 'footer.html' %}

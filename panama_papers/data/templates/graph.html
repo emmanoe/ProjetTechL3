@@ -1,0 +1,43 @@
+{% include 'header.html' %}
+
+<!-- Membres
+ ANDRIANIRINA Diane
+ DELAR Emmanoé
+ SADOURI Massinissa -->
+
+{{nodes}}
+<br/>
+<br/>
+{{nodes1}}
+<br/>
+<br/>
+{{nodes2}}
+
+<h2> entity </h2>
+
+{% for e1 in nodes1 %}
+    {% for key, value in e1.items()  %}
+    {{value['name']}}
+    {{value['jurisdiction']}}
+    {{value['service_provider']}}
+    {{value['incorporation_date']}}
+    {% endfor %}
+  {% endfor %}
+
+<h2> relation </h2>
+
+{% for e in nodes %}
+    {% for key, value in e.items()  %}
+      <h4>  {{value['type']}} </h4>
+    {% endfor %}
+  {% endfor %}
+
+<h2> avec </h2>
+
+    {% for e2 in nodes2 %}
+        {% for key, value in e2.items()  %}
+          <h4>  {{value['name']}}   {{value['address']}}  {{value['countries']}} {{value['status']}}  </h4>
+        {% endfor %}
+      {% endfor %}
+
+{% include 'footer.html' %}

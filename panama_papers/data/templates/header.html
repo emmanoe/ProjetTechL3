@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<!-- Membres
+ ANDRIANIRINA Diane
+ DELAR Emmanoé
+ SADOURI Massinissa -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Panama Papers Leaks </title>
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet"/>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/buildingicon.png')}}">
+</head>
+
+<!-- main page image and title -->
+<div class="container-fluid">
+  <div class="row" style="background:rgb(242, 255, 255);">
+    <div class="col-lg-3 col-md-3 col-xs-3">
+      <a href="/">
+        <img  src="{{ url_for('static', filename='images/logoppl.png')}}" style="width: 50%" />
+      </a>
+    </div>
+    <div class=" col-lg-6 col-md-6 col-xs-6" style="text-align: center; vertical-align: middle;">
+      <h1><strong> Panama Papers Leaks</strong></h1>. powered by D3.js/Neo4j
+    </div>
+  </div>
+</div>
+
+<!-- main page navbar -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/"><b>Home</b></a></li>
+      <li><a href="/vols"><b>Afficher la liste des pays</b></a></li>
+      <li><a href="/search"><b>Rechercher</b></a></li>
+      <li><a href="/about"><b>À Propos</b></a></li>
+    </ul>
+  </div>
+</nav>

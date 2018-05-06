@@ -1,0 +1,49 @@
+{% include 'header.html' %}
+
+<!-- Membres
+ ANDRIANIRINA Diane
+ DELAR Emmanoé
+ SADOURI Massinissa -->
+<style>
+
+.links line {
+  stroke: #aaa;
+  stroke-width: 2px;
+}
+
+.nodes circle {
+  pointer-events: all;
+  stroke: none;
+  stroke-width: 40px;
+}
+
+</style>
+
+ <h1 class="text-center"> Société(s) écran basée en {{selected_country}}</h1>
+ <div class="container">
+  <div class="row">
+    {% if dep|length > 0 %}
+      <table class="table">
+        <tr>
+          <td>name</td>
+          <td>jurisdiction</td>
+          <td>service provider</td>
+          <td>incorporation date</td>
+        </tr>
+        {% for e in dep %}
+          <tr>
+            {% for key, value in e.items()  %}
+              <td><a href={{ url_for('holla', var=value['name'])  }}>{{value['name']}}</a></td>
+              <td>{{value['jurisdiction']}}</td>
+              <td>{{value['service_provider']}}</td>
+              <td>{{value['incorporation_date']}}</td>
+
+            {% endfor %}
+          {% endfor %}
+          </tr>
+      </table>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% include 'footer.html' %}
