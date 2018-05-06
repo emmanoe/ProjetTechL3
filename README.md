@@ -7,21 +7,21 @@ DELAR Emmanoé
 SADOURI Massinissa
 
 # Pré-requis :
-Les dossier import/
+Le dossier import/
 
 dézipper le fichier ./zip/import et copier le dans votre dossier /neo4j/ (assurez vous au préalable que votre serveur soit stoppé)
 
-> `unzip ./zip/import.zip`
-> `mv graph.db ~/{localisation de votre neo4j}/`
+> `unzip data/zip/import.zip`
+> `mv import/ ~/{localisation de votre neo4j}/`
 
 # Création la base de données Neo4J
 Il y a 2 méthodes pour créer la base de données.
 
 ## Méthode 1 : Copier puis charger la bdd
 
-dézipper le fichier ./zip/graph.db.zip et déplacer le dans votre dossier neo4j data/databases/ (assurez vous au préalable que votre serveur soit stoppé)
+dézipper le fichier data/zip/graph.db.zip et déplacer le dans votre dossier neo4j data/databases/ (assurez vous au préalable que votre serveur soit stoppé)
 
-> `unzip graph.db.zip`
+> `unzip data/zip/graph.db.zip`
 > `mv graph.db ~/{localisation de votre neo4j}/data/databases/`
 
 Puis charger le reste des données à partir des requêtes Cypher
