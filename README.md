@@ -79,7 +79,8 @@ match (p2:entity) where p2.id = line.`Node_2`
 MERGE (p1)-[r:officer_of{type:line.`rel_type`}]->(p2) SET r.sourceID=line.`r.sourceID` SET r.valid_until=line.`r.valid_until` SET r.start_date=line.`r.start_date` SET r.end_date=line.`r.end_date`
 ```
 
-```LOAD CSV WITH HEADERS FROM 'file:///intermediary_of.csv' AS line
+```
+LOAD CSV WITH HEADERS FROM 'file:///intermediary_of.csv' AS line
 FIELDTERMINATOR ','
 WITH line        
 match (p1:intermediary) where p1.id = line.`Node_1`
@@ -87,7 +88,8 @@ match (p2:entity) where p2.id = line.`Node_2`
 MERGE (p1)-[r:intermediary_of{type:line.`rel_type`}]->(p2) SET r.sourceID=line.`r.sourceID` SET r.valid_until=line.`r.valid_until` SET r.start_date=line.`r.start_date` SET r.end_date=line.`r.end_date`
 ```
 
-```LOAD CSV WITH HEADERS FROM 'file:///address.csv' AS line
+```
+LOAD CSV WITH HEADERS FROM 'file:///address.csv' AS line
 FIELDTERMINATOR ','
 WITH line        
 match (p1:entity) where p1.id = line.`node_1`
