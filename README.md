@@ -70,7 +70,8 @@ SET in.id = line.`n.node_id` SET in.country_code = line.`n.country_codes` SET in
 
 ##### Chargement des relations
 
-```LOAD CSV WITH HEADERS FROM 'file:///officer_of.csv' AS line
+```
+LOAD CSV WITH HEADERS FROM 'file:///officer_of.csv' AS line
 FIELDTERMINATOR ','
 WITH line        
 match (p1:officer) where p1.id = line.`Node_1`
