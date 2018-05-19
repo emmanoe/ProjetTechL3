@@ -6,12 +6,15 @@ ANDRIANIRINA Diane
 DELAR Emmanoé
 SADOURI Massinissa
 
+# Description :
+
 # Pré-requis :
 Le dossier import/
 
 dézipper le fichier ./zip/import et copier le dans votre dossier /neo4j/ (assurez vous au préalable que votre serveur soit stoppé)
 
 > `unzip data/zip/import.zip`
+
 > `mv import/ ~/{localisation de votre neo4j}/`
 
 # Création la base de données Neo4J
@@ -22,6 +25,7 @@ Il y a 2 méthodes pour créer la base de données.
 dézipper le fichier data/zip/graph.db.zip et déplacer le dans votre dossier neo4j data/databases/ (assurez vous au préalable que votre serveur soit stoppé)
 
 > `unzip data/zip/graph.db.zip`
+
 > `mv graph.db ~/{localisation de votre neo4j}/data/databases/`
 
 Puis charger le reste des données à partir des requêtes Cypher
@@ -35,20 +39,24 @@ Connectez vous à http://localhost:7474/ si ce n'est pas déja fait
 À partir de la command shell de Neo4j browser, lancez les requêtes suivantes. Elles indexeront les données afin de faciliter le parcours de la bdd
 
 > `CREATE INDEX ON:entity(id)`
+
 > `CREATE INDEX ON:address(id)`
+
 > `CREATE INDEX ON:intermediary(id)`
+
 > `CREATE INDEX ON:officer(id)`
 
 Puis lancer les derniers chargements
 
 ##### Chargement des addresses
-> USING PERIODIC COMMIT 10000
+
+```USING PERIODIC COMMIT 10000
 LOAD CSV WITH HEADERS FROM 'file:///panama_papers.nodes.address.csv' AS line
 FIELDTERMINATOR ','
 WITH line
 MERGE (ad:address)
 SET ad.id = line.`n.node_id` SET ad.countries = line.`n.countries` SET ad.address = line.`n.address` SET ad.sourceID =line.`n.sourceID` SET ad.country_codes =line.`n.country_codes` SET ad.service_provider =line.`n.service_provider`  SET ad.jurisdiction_description =line.`n.jurisdiction_description`  SET ad.jurisdiction=line.`n.jurisdiction` SET ad.closed_date=line.`n.closed_date` SET ad.incorporation_date=line.`n.incorporation_date` SET ad.ibcRUC=line.`n.ibcRUC` SET ad.type=line.`n.type` SET ad.status=line.`n.status` SET ad.company_type=line.`n.company_type` SET ad.note=line.`n.note`
-
+```
 
 ##### Chargement des intermediares
 
