@@ -10,6 +10,8 @@ SADOURI Massinissa
 
 <p align="center">
 	<img src="./images/vols.png" />
+  <img src="./images/france.png" />
+  <img src="./images/about.png" />
 </p>
 
 # Pré-requis :
