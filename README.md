@@ -10,11 +10,11 @@ SADOURI Massinissa
 
 <p align="center">
 	<img src="./images/vols.png" />
-</p>
-<br/><p align="center">
+</p><br/>
+<p align="center">
   <img src="./images/france.png" />
-</p>
-<br/><p align="center">
+</p><br/>
+<p align="center">
   <img src="./images/about.png" />
 </p>
 
